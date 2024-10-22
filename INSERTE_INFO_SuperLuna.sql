@@ -79,7 +79,7 @@ INSERT INTO railway.Clientes (nombre, telefono, email, direccion) VALUES
 ('Juan PEPE', '3412345678', 'juan.pepe@example.com', 'Calle Nofalsa 123'),
 ('Ana Martínez', '3418765432', 'ana.martinez@example.com', 'Av. Principal 456'),
 ('Luis García', '3415671234', 'luis.garcia@example.com', 'Calle Secundaria 789');
--- deberia tener 7 ordenes de venta
+-- deberia tener 6 ordenes de venta
 
 -- Ordenes_Venta
 INSERT INTO railway.Ordenes_Venta (id_cliente, fecha_hora, total) VALUES
@@ -90,8 +90,7 @@ INSERT INTO railway.Ordenes_Venta (id_cliente, fecha_hora, total) VALUES
 (4, '2024-10-03 14:00:00', 300.00),
 (4, '2024-10-04 13:00:00', 30.00),
 (5, '2024-10-01 14:00:00', 700.00),
-(6, '2024-10-03 14:00:00', 220.00),
-(7, '2024-10-01 14:00:00', 150.00);
+(6, '2024-10-03 14:00:00', 220.00);
 
 -- Detalles_Ordenes_Venta VER BIEN Y PENSARLO BIEN BOE ES UNA RE PAJA
 INSERT INTO railway.Detalles_Ordenes_Venta (id_orden_venta, id_producto, cantidad, precio_unitario) VALUES
@@ -119,10 +118,10 @@ INSERT INTO railway.Detalles_Ordenes_Venta (id_orden_venta, id_producto, cantida
 (7, 4, 1, 899.99),  -- 1 Laptop a $899.99 (descuento para llegar a $700.00)
 
 -- Orden de venta 8: Total 220.00
-(8, 5, 73, 2.99),   -- 73 Chocolates a $2.99 cada uno
+(8, 5, 73, 2.99);   -- 73 Chocolates a $2.99 cada uno
 
--- Orden de venta 9: Total 150.00
-(9, 3, 8, 19.99);   -- 8 Camisetas a $19.99 cada una
+-- Orden de venta 9: Total 150.00 --muere
+-- (9, 3, 8, 19.99);   -- 8 Camisetas a $19.99 cada una
 
 
 
