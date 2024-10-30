@@ -43,6 +43,21 @@ GROUP BY
 ORDER BY 
     total_compras DESC;
 
+--
+SELECT 
+    s.id_sucursal,
+    s.nombre,
+    COUNT(oc.id_orden_compra) AS total_ordenes_compra
+FROM 
+    railway.Ordenes_Compra oc
+JOIN 
+    railway.Sucursales s ON oc.id_sucursal = s.id_sucursal
+GROUP BY 
+    s.id_sucursal, s.nombre
+ORDER BY 
+    total_ordenes_compra DESC
+LIMIT 5;
+
 
 
 -- Testing 
@@ -50,5 +65,9 @@ SELECT * FROM railway.Productos;
 SELECT * FROM railway.Detalles_Ordenes_Venta;
 SELECT * FROM railway.Ordenes_Venta ORDER BY 
     id_cliente DESC;
+    
+ 
+-- INSERT INTO railway.Ordenes_Compra (id_proveedor, id_sucursal, fecha_hora, total) VALUES (1, 1, '2024-09-25 11:00:00', 400.00);
+
 
 UPDATE railway.Productos SET id_producto = 6 WHERE id_producto = 20;
